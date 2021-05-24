@@ -66,7 +66,7 @@ namespace ACE.Server.Command.Handlers
                     CommandHandlerHelper.WriteOutputInfo(session, $"You are now cloaked.\nYou are now ethereal and can pass through doors.", ChatMessageType.Broadcast);
                     break;
                 case "player":
-                    if (session.AccessLevel > AccessLevel.Envoy)
+                    if (session.AccessLevel > AccessLevel.Sentinel)
                     {
                         if (session.Player.CloakStatus == CloakStatus.Player)
                             return;
@@ -80,7 +80,7 @@ namespace ACE.Server.Command.Handlers
                         CommandHandlerHelper.WriteOutputInfo(session, $"You do not have permission to do that state", ChatMessageType.Broadcast);
                     break;
                 case "creature":
-                    if (session.AccessLevel > AccessLevel.Envoy)
+                    if (session.AccessLevel > AccessLevel.Sentinel)
                     {
                         if (session.Player.CloakStatus == CloakStatus.Creature)
                             return;
